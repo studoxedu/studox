@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useAuth } from './hooks/useAuth'
 import Login from './pages/auth/Login'
@@ -226,9 +226,13 @@ function ProtectedApp() {
   )
 }
 
+// Electron loads via file:// where the HTML5 history API can't work, so fall
+// back to hash-based routing there; the web build keeps clean BrowserRouter URLs.
+const Router = window.location.protocol === 'file:' ? HashRouter : BrowserRouter
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         {/* Parent portal lives at /portal — separate from staff app */}
         <Route path="/portal/*" element={<ParentPortal />} />
@@ -236,6 +240,6 @@ export default function App() {
         <Route path="/*" element={<ProtectedApp />} />
       </Routes>
       <SyncBanner />
-    </BrowserRouter>
+    </Router>
   )
 }
