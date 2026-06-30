@@ -55,8 +55,8 @@
     "productName": "Studox OS",
     "files": ["dist/**/*", "electron/**/*"],
     "directories": { "output": "release" },
-    "win": { "target": "nsis", "icon": "public/favicon.svg" },
-    "mac": { "target": "dmg", "icon": "public/favicon.svg" },
-    "linux": { "target": "AppImage", "icon": "public/favicon.svg" }
+    "win": { "target": "nsis", "icon": "src-tauri/icons/icon.png" },
+    "mac": { "target": "dmg", "icon": "src-tauri/icons/icon.png" },
+    "linux": { "target": "AppImage", "icon": "src-tauri/icons/icon.png" }
   }
 }
