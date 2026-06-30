@@ -1,0 +1,42 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'icons.svg'],
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff,woff2}'],
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
+        // Don't let the service worker cache Supabase API calls —
+        // our fetch interceptor handles that at the application layer
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/rest\//, /^\/auth\//, /^\/storage\//],
+      },
+      manifest: {
+        name: 'Studox OS',
+        short_name: 'Studox',
+        description: 'Institutional Management Platform',
+        theme_color: '#0f172a',
+        background_color: '#ffffff',
+        display: 'standalone',
+        orientation: 'any',
+        scope: '/',
+        start_url: '/',
+        icons: [
+          {
+            src: 'favicon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'any',
+          },
+        ],
+      },
+    }),
+  ],
+})
