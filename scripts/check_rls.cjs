@@ -1,6 +1,6 @@
 const https = require('https')
 const PROJECT = 'fghdgtihpvaehykgqgro'
-const PAT     = 'sbp_7f1e0eb73357280b5c2ee9ac7c490c651d4d7ee9'
+const PAT     = process.env.SUPABASE_PAT
 
 function query(sql) {
   return new Promise((resolve, reject) => {

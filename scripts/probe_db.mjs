@@ -15,7 +15,7 @@ async function run() {
       host,
       port: 5432,
       user: 'postgres.fghdgtihpvaehykgqgro',
-      password: 'Studox2026!',
+      password: process.env.SUPABASE_DB_PASSWORD,
       database: 'postgres',
       ssl: { rejectUnauthorized: false },
       connectionTimeoutMillis: 8000,

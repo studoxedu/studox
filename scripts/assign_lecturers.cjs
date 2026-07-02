@@ -3,7 +3,7 @@
  * Also adds RLS so lecturers can update scores for their courses.
  */
 const https = require('https')
-const PAT = 'sbp_7f1e0eb73357280b5c2ee9ac7c490c651d4d7ee9'
+const PAT = process.env.SUPABASE_PAT
 const PROJECT_REF = 'fghdgtihpvaehykgqgro'
 
 function sql(q) {

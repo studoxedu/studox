@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
   'https://fghdgtihpvaehykgqgro.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnaGRndGlocHZhZWh5a2dxZ3JvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTYzNzk4NywiZXhwIjoyMDk3MjEzOTg3fQ.fdc7RnbFYDgSmnNOentuSq7kHCpMAVTjgIL76OLKoD0',
+  process.env.SUPABASE_SERVICE_KEY,
   { auth: { autoRefreshToken: false, persistSession: false } }
 )
 

@@ -1,8 +1,8 @@
 const https = require('https');
 
-const PAT = 'sbp_7f1e0eb73357280b5c2ee9ac7c490c651d4d7ee9';
+const PAT = process.env.SUPABASE_PAT;
 const PROJECT_REF = 'fghdgtihpvaehykgqgro';
-const SERVICE_ROLE = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnaGRndGlocHZhZWh5a2dxZ3JvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTYzNzk4NywiZXhwIjoyMDk3MjEzOTg3fQ.fdc7RnbFYDgSmnNOentuSq7kHCpMAVTjgIL76OLKoD0';
+const SERVICE_ROLE = process.env.SUPABASE_SERVICE_KEY;
 
 function runSQL(sql, label) {
   return new Promise((resolve, reject) => {

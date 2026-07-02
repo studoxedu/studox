@@ -4,7 +4,7 @@
  * HOD instances to their departments.
  */
 const https = require('https')
-const PAT         = 'sbp_7f1e0eb73357280b5c2ee9ac7c490c651d4d7ee9'
+const PAT         = process.env.SUPABASE_PAT
 const PROJECT_REF = 'fghdgtihpvaehykgqgro'
 const FUSOX_ID    = '7fe07e1c-1684-47c2-9c0f-656e34fbc9e4'
 

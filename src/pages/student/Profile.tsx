@@ -8,7 +8,7 @@ import type { AppUser } from '../../types'
 
 interface Props { appUser: AppUser }
 
-const BUCKET_URL = 'https://fghdgtihpvaehykgqgro.supabase.co/storage/v1/object/public/avatars'
+const BUCKET_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/avatars`
 
 export default function StudentProfile({ appUser }: Props) {
   const ctx = useStudentContext(appUser)

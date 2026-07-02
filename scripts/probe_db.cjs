@@ -17,7 +17,7 @@ async function tryConnect(label, config) {
 
 async function run() {
   const ref = 'fghdgtihpvaehykgqgro';
-  const pw  = 'Studox2026!';
+  const pw  = process.env.SUPABASE_DB_PASSWORD;
   const db  = 'postgres';
   const ipv6 = '2a05:d014:8ef:5901:12b7:d6b9:4c08:309';
 
